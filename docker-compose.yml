@@ -1,5 +1,9 @@
 version: '3'
 services:
+  mongo:
+    image: mongo:3.0.15
+    ports:
+      - "27017:27017"
   web:
     build: .
     command: yarn start
@@ -12,3 +16,5 @@ services:
     environment:
       PORT: "3000"
       NODE_ENV: "development"
+    depends_on:
+      - mongo
