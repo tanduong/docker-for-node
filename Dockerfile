@@ -7,3 +7,6 @@ ADD ./src/package.json /src/package.json
 ADD ./src/yarn.lock /src/yarn.lock
 RUN npm install -g yarn
 RUN yarn install
+RUN yarn global add bower
+RUN yarn global add pm2
+RUN bower install --allow-root
